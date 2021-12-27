@@ -1,5 +1,5 @@
-from xrsolver.core.symbol import V
-from xrsolver.core.problem import Problem
+from xrsolver import V
+from xrsolver import Problem
 
 import solver
 

@@ -1,4 +1,4 @@
-from xrsolver.core.solver import AbsSolver
+from xrsolver import AbsSolver
 
 class CvxpySolver(AbsSolver):
 	def __init__(self, solver):

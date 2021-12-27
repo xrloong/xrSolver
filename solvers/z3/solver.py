@@ -1,4 +1,4 @@
-from xrsolver.core.solver import AbsSolver
+from xrsolver import AbsSolver
 
 class Z3Solver(AbsSolver):
 	def __init__(self):

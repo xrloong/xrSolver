@@ -1,4 +1,4 @@
-from xrsolver.core.solver import AbsSolver
+from xrsolver import AbsSolver
 
 class GekkoSolver(AbsSolver):
 	def __init__(self):
