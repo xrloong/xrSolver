@@ -19,7 +19,7 @@ class DeapSolver(AbsSolver):
 		return sp.Eq(lhs, rhs, evaluate=False)
 
 	def doSolve(self, problem):
-		from deap_solver import deapSolve
+		from .deap_solver import deapSolve
 
 		symbols = problem.getSymbols()
 		variables = problem.getVariables()
