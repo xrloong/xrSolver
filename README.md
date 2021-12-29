@@ -5,12 +5,32 @@
 
 The goal of this project to to provide a common wrapper APIs for many solvers to Constraint Satisfaction Problems. The initial implementation is in [Yong8](https://github.com/xrloong/Yong8). To extract the foundation of solvers as this project.
 
+編譯
+====
+主程式的部分：
+```console
+$ python3 -m build
+```
+
+求解器的部分：
+```console
+$ python3 -m build solvers/cassowary
+$ python3 -m build solvers/cvxpy
+$ python3 -m build solvers/deap
+$ python3 -m build solvers/dreal
+$ python3 -m build solvers/gekko
+$ python3 -m build solvers/pulp
+$ python3 -m build solvers/z3
+```
+
+
 安裝
 ====
 
 * 第三方函式庫（Third-party libraries）
 ```console
-$ pip3 install <<package-name>>
+$ pip3 install xrSolver-{version}-py3-none-any.whl
+$ pip3 install xrSolver_{solver name}-{version}-py3-none-any.whl
 ```
 
 |   solver  | PIP package |
@@ -26,7 +46,5 @@ $ pip3 install <<package-name>>
 範例
 ===
 
-```console
-$ PYTHONPATH="src:solvers/cassowary/" python3 example/example1.py
-```
+相關範例，請參考[相關說明](example/README.md) 。
 
