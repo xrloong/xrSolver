@@ -111,13 +111,14 @@ class A:
 		return C(symexpr)
 
 class V(A):
-	def __init__(self, name, lb = None, ub = None):
+	def __init__(self, name, lb = None, ub = None, ndigits = 6):
 		from sympy import Symbol
 		super().__init__(Symbol(name))
 
 		self.name = name
 		self.lb = lb
 		self.ub = ub
+		self.ndigits = ndigits
 
 		self.value = 0
 
@@ -125,7 +126,10 @@ class V(A):
 		self.value = value
 
 	def getValue(self):
-		return self.value
+		if self.ndigits != None:
+			return round(self.value, self.ndigits)
+		else:
+			return self.value
 
 	def getName(self):
 		return self.name
