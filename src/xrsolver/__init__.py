@@ -1,4 +1,3 @@
-from .core.symbol import V
 from .core.problem import Problem
 from .core.solver import AbsSolver
 

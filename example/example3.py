@@ -1,4 +1,3 @@
-from xrsolver import V
 from xrsolver import Problem
 
 import solver
@@ -7,14 +6,15 @@ import solver
 
 s = solver.Solver()
 
-x11 = V("x11", lb=0)
-x12 = V("x12", lb=0)
-x13 = V("x13", lb=0)
-x21 = V("x21", lb=0)
-x22 = V("x22", lb=0)
-x23 = V("x23", lb=0)
-
 p = Problem()
+
+x11 = p.generateVariable("x11", lb=0)
+x12 = p.generateVariable("x12", lb=0)
+x13 = p.generateVariable("x13", lb=0)
+x21 = p.generateVariable("x21", lb=0)
+x22 = p.generateVariable("x22", lb=0)
+x23 = p.generateVariable("x23", lb=0)
+
 p.addVariable(x11)
 p.addVariable(x12)
 p.addVariable(x13)

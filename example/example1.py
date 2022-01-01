@@ -1,4 +1,3 @@
-from xrsolver import V
 from xrsolver import Problem
 
 import solver
@@ -7,10 +6,11 @@ import solver
 
 s = solver.Solver()
 
-x = V("x", lb=0)
-y = V("y", lb=0)
-
 p = Problem()
+
+x = p.generateVariable("x", lb=0)
+y = p.generateVariable("y", lb=0)
+
 p.addVariable(x)
 p.addVariable(y)
 

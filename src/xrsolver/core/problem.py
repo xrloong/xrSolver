@@ -16,12 +16,14 @@ class Objective:
 		return self.function
 
 class Problem(CompoundConstraint):
-	def __init__(self):
+	def __init__(self, domain = None):
+		super().__init__(domain)
+
 		self.variables = []
 		self.constraints = []
 		self.objectives = []
 
-		zero = V("zero", lb=0, ub=0)
+		zero = self.generateVariable("zero", lb=0, ub=0)
 		self.addVariable(zero)
 		self.appendObjective(zero)
 
