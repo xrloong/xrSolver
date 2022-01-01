@@ -5,7 +5,7 @@ from .symbol import C
 from .symbol import E
 
 class Objective:
-	def __init__(self, function, optimization: Optimization):
+	def __init__(self, function, optimization: Optimization = Optimization.Maximize):
 		self.optimization = optimization
 		self.function = function
 
