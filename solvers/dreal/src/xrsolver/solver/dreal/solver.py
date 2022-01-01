@@ -4,14 +4,15 @@ class DRealSolver(AbsSolver):
 	def __init__(self):
 		super().__init__()
 		self.boundConstraints = []
+		self.eps = 0.0000001
 
 	def generateSolverVariable(self, variableName, lowerBound=None, upperBound=None):
 		from dreal import Variable
 		variable = Variable(variableName, Variable.Real)
 		if lowerBound is not None:
-			self.boundConstraints.append(lowerBound <= variable)
+			self.boundConstraints.append(lowerBound - self.eps <= variable)
 		if upperBound is not None:
-			self.boundConstraints.append(variable <= upperBound)
+			self.boundConstraints.append(variable <= upperBound + self.eps)
 		return variable
 
 	def doSolve(self, problem):
@@ -21,7 +22,7 @@ class DRealSolver(AbsSolver):
 		constraints = tuple(self.boundConstraints) + tuple(problem.getConstraints())
 		objective = problem.getMinimizeObjective()
 
-		result = Minimize(objective, And(*constraints), 0)
+		result = Minimize(objective, And(*constraints), self.eps)
 
 		variableToSymbolMap = {}
 		for symbol in problem.getSymbols():
